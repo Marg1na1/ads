@@ -1,0 +1,21 @@
+.grid {
+    padding-top: 92px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.more {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--ocean-blue-color);
+    border: none;
+    background-color: transparent;
+    padding: 8px 15px;
+    border-radius: 45px;
+    display: block;
+    width: 125px;
+    margin: 0 auto 31px auto;
+}
