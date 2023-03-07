@@ -18,7 +18,7 @@ const Home: FC = () => {
     useEffect(() => {
         if (paginate.page * 10 > ads.length) {
             dispatch(getAds(paginate.page))
-        }
+        } 
     }, [paginate.page])
 
     const renderSkeleton = [...new Array(20)].map((_, i) => <AdSkeleton key={i} />);

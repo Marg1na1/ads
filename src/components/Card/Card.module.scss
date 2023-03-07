@@ -1,9 +1,14 @@
 .ad {
-    max-width: 224px;
+    display: flex;
+
+    @media (max-width: 987px) {
+        justify-content: center;
+    }
 }
 
 .root {
     position: relative;
+    max-width: 224px;
 }
 
 .img {
