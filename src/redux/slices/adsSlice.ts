@@ -12,7 +12,7 @@ export const getAds = createAsyncThunk(
 )
 
 export interface CounterState {
-    adverts: AdvertModel[] | [];
+    adverts: AdvertModel[];
     statuses: 'FULFILLED' | 'PENDING' | 'REJECTED' | '';
     paginate: {
         page: number;
@@ -39,9 +39,8 @@ export const adsSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(getAds.fulfilled, (state, action) => {
-            ///@ts-ignore
-            state.adverts.push(...action.payload.data.items)
             state.statuses = 'FULFILLED'
+            state.adverts.push(...action.payload.data.items)
             state.paginate.page = action.payload.data.page
             state.paginate.pages = action.payload.data.pages
         })

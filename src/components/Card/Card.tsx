@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { AdvertModel } from '../../models';
+import { Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import style from './Card.module.scss';
-import { Pagination } from 'swiper';
 
-const Card: FC<AdvertModel> = ({ seen, price, title, address, about, createdAt }) => {
+const Card: FC<AdvertModel> = ({ createdAt, price, title, address, seen }) => {
 
     const adDate = new Date(createdAt.split(' ')[0]).toLocaleString('ru')
 
@@ -28,9 +28,7 @@ const Card: FC<AdvertModel> = ({ seen, price, title, address, about, createdAt }
                     modules={[Pagination]}
                     pagination={{ clickable: true }}
                 >
-                    {
-                        renderSlides
-                    }
+                    {renderSlides}
                 </Swiper>
                 <div className={style['main']}>
                     <div className={style['scrap']}>
