@@ -1,14 +1,15 @@
 import { FC } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { AdvertModel } from '../../models';
+import { Link } from 'react-router-dom';
 import { Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import style from './Card.module.scss';
 
-const Card: FC<AdvertModel> = ({ createdAt, price, title, address, seen }) => {
+const Card: FC<AdvertModel> = ({ createdAt, price, title, address, seen, id }) => {
 
-    const adDate = new Date(createdAt.split(' ')[0]).toLocaleString('ru')
+    const adDate = new Date(createdAt.split(' ')[0]).toLocaleString('ru');
 
     const renderSlides = [...new Array(4)].map((_, i) =>
         <SwiperSlide key={i}>
@@ -18,18 +19,19 @@ const Card: FC<AdvertModel> = ({ createdAt, price, title, address, seen }) => {
                 className={style['img']}
             />
         </SwiperSlide>)
-
     return (
         <li className={style['ad']}>
             <article className={style['root']}>
-                <Swiper
-                    slidesPerView={1}
-                    className={style['slider']}
-                    modules={[Pagination]}
-                    pagination={{ clickable: true }}
-                >
-                    {renderSlides}
-                </Swiper>
+                <Link to={id}>
+                    <Swiper
+                        slidesPerView={1}
+                        className={style['slider']}
+                        modules={[Pagination]}
+                        pagination={{ clickable: true }}
+                    >
+                        {renderSlides}
+                    </Swiper>
+                </Link>
                 <div className={style['main']}>
                     <div className={style['scrap']}>
                         <p className={style['price']}>{price} ₽</p>

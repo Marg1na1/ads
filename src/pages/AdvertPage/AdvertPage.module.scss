@@ -1,0 +1,81 @@
+.root {
+    padding: 92px 0 63px 0;
+}
+
+.slider {
+    margin-bottom: 10px;
+}
+
+.crumb {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.seen {
+    padding: 8px 15px;
+    border-radius: 8px;
+    background-color: var(--light-color);
+}
+
+.about {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 16px;
+    color: var(--matte-black-color);
+    margin-bottom: 25px;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 25px;
+    color: var(--matte-black-color);
+    margin-right: 25px;
+}
+
+.like {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+    svg {
+        path {
+            transition: .3s;
+        }
+    }
+
+    &:hover {
+        svg {
+            path {
+                fill: var(--deep-gray-color);
+            }
+        }
+    }
+
+    &:active {
+        svg {
+            path {
+                fill: var(--ocean-blue-color);
+            }
+        }
+    }
+}
+
+.city {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 14px;
+    color: var(--philippine-gray-color);
+    margin-right: 25px;
+}
+
+.date {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 14px;
+    color: var(--philippine-gray-color);
+}

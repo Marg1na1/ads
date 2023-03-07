@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { useDispatch } from 'react-redux';
 import adsSlice from './slices/adsSlice';
+import adSlice from './slices/adSlice';
 
 export const store = configureStore({
     reducer: {
-        adsSlice
+        adsSlice,
+        adSlice
     },
     middleware: getDefaultMiddleware =>
         getDefaultMiddleware({
